@@ -1,30 +1,26 @@
 William Rudebusch 
 Aug 12, 2019
 
-# Answer the following questions (please provide the answer and the SQL used to get that answer):
+## Answer the following questions (please provide the answer and the SQL used to get that answer):
 
-## 1. What is the number of unique users?
+1. What is the number of unique users?
 2904
 
-```SELECT COUNT(DISTINCT user_id) FROM users WHERE user_id IS NOT NULL;
-```
+```SELECT COUNT(DISTINCT user_id) FROM users WHERE user_id IS NOT NULL;```
 
-## 2. Who are the marketing ad providers?
+2. Who are the marketing ad providers?
+ Instagram, Facebook, Snapchat, Spotify
 
-Instagram, Facebook, Snapchat, Spotify
-
-```SELECT provider, COUNT(*) FROM marketing GROUP BY provider;
-```
+```SELECT provider, COUNT(*) FROM marketing GROUP BY provider;```
 
 
-## 3. Which user property is changed the most frequently?
+3. Which user property is changed the most frequently?
 drinking
 
-```SELECT COUNT(*), property FROM users GROUP BY property ORDER BY COUNT DESC;
-```
+```SELECT COUNT(*), property FROM users GROUP BY property ORDER BY COUNT DESC;```
 
 
-## 4. Which ad was showed the most to users who identify as moderates?
+4. Which ad was showed the most to users who identify as moderates?
 NOTE: I answered "who has _ever_ identified as moderate" since _currently_ identify as moderate would be a little tricky. 
 ad_id = 4
 
@@ -34,15 +30,7 @@ ad_id = 4
  	GROUP BY  m.ad_id ORDER BY COUNT DESC;
  ```
 
-## 5. What are the top 5 ads? Explain how you arrived at that conclusion.
+##5. What are the top 5 ads? Explain how you arrived at that conclusion.
 top five are 1,4,2,0,3
- ad_id  | count 
---------+-------
- 1      |   745
- 4      |   731
- 2      |   689
- 0      |   673
- 3      |   673
 
-```mytestdb=# SELECT ad_id, COUNT(*) FROM marketing GROUP BY ad_id ORDER BY COUNT DESC;
-```
+```mytestdb=# SELECT ad_id, COUNT(*) FROM marketing GROUP BY ad_id ORDER BY COUNT DESC;```
