@@ -26,14 +26,11 @@ Step 6: (testing, you can skip this) while inside the container, we connect to t
 `psql -U postgres`
 
 Step 7: (testing, you can skip this) list databases 
-```\l 
-\q
-```
+`\l \q`
+
 
 Step 8: (testing, you can skip this) in a diff terminal connect to postgres and see that if its ok:
-```psql -h localhost -p 5432 -U postgres -W  
-\l
-```
+`psql -h localhost -p 5432 -U postgres -W  \l`
 
 ## Python
 
@@ -46,8 +43,8 @@ Step 10: run the script I wrote
 ## SQL
 Step 11: test to see if if worked:
 ```psql -h localhost -p 5432 -U postgres -W
-\c postgres
-\dt
+  \c postgres
+  \dt
 ```
 
 Have fun using SQL!
